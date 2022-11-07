@@ -1,0 +1,290 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="OpenBrowser" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="http://schemas.uipath.com/workflow/activities/cv" xmlns:p1="http://schemas.uipath.com/workflow/activities/ocr" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:sd="clr-namespace:System.Drawing;assembly=System.Drawing" xmlns:uc="clr-namespace:UiPath.CV;assembly=UiPath.CV" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="URL" Type="InArgument(x:String)" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1848,1193</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>OpenBrowser_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.CV</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.Shared.ObjectLibrary</x:String>
+      <x:String>UiPath.CV.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.CV.Activities.Interfaces</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>System.Reflection</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.CV</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.CV.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="OpenBrowser" sap:VirtualizedContainerService.HintSize="592,953" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:OpenApplication ApplicationWindow="{x:Null}" Arguments="{x:Null}" TimeoutMS="{x:Null}" WorkingDirectory="{x:Null}" DisplayName="Open Application 'Chrome New Tab'" FileName="C:\Program Files\Google\Chrome\Application\chrome.exe" sap:VirtualizedContainerService.HintSize="530,831" sap2010:WorkflowViewState.IdRef="OpenApplication_1" InformativeScreenshot="2f9fce7961b731db825159344b491a0d" Selector="&lt;html app='chrome.exe' title='New Tab' /&gt;">
+      <ui:OpenApplication.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="496,675" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <p:CVScope ContinueOnError="{x:Null}" DelayBefore="{x:Null}" ScopeId="{x:Null}" Server="{x:Null}" CvMethod="ElementDetection, OCR" DesignTimeCacheId="e5dae0a6-f149-4c31-a697-0d352535901b" DisplayName="CV Screen Scope New Tab" sap:VirtualizedContainerService.HintSize="434,553" sap2010:WorkflowViewState.IdRef="CVScope_1" SendOnPremData="False" Version="V5">
+              <p:CVScope.Body>
+                <ActivityAction x:TypeArguments="x:Object">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="x:Object" Name="CVSessionData" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="Do" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                    <p:CvTypeIntoWithDescriptor DelayScreenshotAfterScroll="{x:Null}" DeselectAfter="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" ClickBeforeTyping="True" Descriptor="[&quot;Target: InputBox (104,38,2308,27)&quot; +&#xA;&quot;Anchor: Text 'Google' (1138,262,280,98)&quot;]" DesignTimeCacheId="e5dae0a6-f149-4c31-a697-0d352535901b" DesignTimeScaleFactor="1" DisplayName="CV Type Into - InputBox" EmptyField="True" sap:VirtualizedContainerService.HintSize="400,194" sap2010:WorkflowViewState.IdRef="CvTypeIntoWithDescriptor_1" InformativeScreenshot="801679de7ee973a4a4a5a6560c907263" NumberOfScrolls="2" ScrollDirection="None" Text="[URL]" Version="V5">
+                      <p:CvTypeIntoWithDescriptor.DesignTimeDescriptor>
+                        <uc:CvDescriptor Id="c0b3be2f-c87d-43ba-b86f-2af08e2c1233">
+                          <uc:CvDescriptor.Anchors>
+                            <x:Array Type="uc:CvElementDescriptor">
+                              <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="1138, 262, 280, 98" ElementType="Text" Text="Google" />
+                            </x:Array>
+                          </uc:CvDescriptor.Anchors>
+                          <uc:CvDescriptor.Target>
+                            <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="104, 38, 2308, 27" ElementType="InputBox" />
+                          </uc:CvDescriptor.Target>
+                        </uc:CvDescriptor>
+                      </p:CvTypeIntoWithDescriptor.DesignTimeDescriptor>
+                      <p:CvTypeIntoWithDescriptor.Target>
+                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="f80387ba-b1bb-486b-bc38-815c2be09367">
+                          <ui:Target.TimeoutMS>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:Target.TimeoutMS>
+                          <ui:Target.WaitForReady>
+                            <InArgument x:TypeArguments="ui:WaitForReady" />
+                          </ui:Target.WaitForReady>
+                        </ui:Target>
+                      </p:CvTypeIntoWithDescriptor.Target>
+                    </p:CvTypeIntoWithDescriptor>
+                  </Sequence>
+                </ActivityAction>
+              </p:CVScope.Body>
+              <p:CVScope.DesignTimeCache>
+                <uc:CVCache CvUiElements="{x:Null}" OcrTexts="{x:Null}" DataSent="False" />
+              </p:CVScope.DesignTimeCache>
+              <p:CVScope.DesignTimeCacheContainer>
+                <uc:CvCacheContainer>
+                  <uc:CvCacheContainer.Caches>
+                    <scg:List x:TypeArguments="uc:CVCache" Capacity="1">
+                      <uc:CVCache DataSent="False" DisplayName="Screen CV Type Into - 'Google' (Main)" Id="e5dae0a6-f149-4c31-a697-0d352535901b" InformativeScreenshot="e5e2b6d29abeeec1d93b7e8acb394331" LogicalPosition="0, 0" OcrText="New Tab X + v _ X G Search Google or type a URL Gmail Images Google Search Google or type a URL Ui Ui Ui Ui © Log In Work Items Upload Yearly... Work Items Gmail Ui © © + Download M... Ayuda de Go... Inicia sesion Web Store Add shortcut Customize Chrome" Position="0, 0" ScreenshotGuid="444db6d2-3e16-4543-a525-e08297c06276" ServerVersion="1">
+                        <uc:CVCache.CvAnchorRelations>
+                          <scg:List x:TypeArguments="uc:AnchorRelationInfo" Capacity="4">
+                            <uc:AnchorRelationInfo IsTargetText="False" Target="41">
+                              <uc:AnchorRelationInfo.Anchors>
+                                <x:Array Type="x:Int32">
+                                  <x:Int32>17</x:Int32>
+                                  <x:Int32>18</x:Int32>
+                                  <x:Int32>19</x:Int32>
+                                  <x:Int32>20</x:Int32>
+                                  <x:Int32>21</x:Int32>
+                                  <x:Int32>22</x:Int32>
+                                </x:Array>
+                              </uc:AnchorRelationInfo.Anchors>
+                            </uc:AnchorRelationInfo>
+                          </scg:List>
+                        </uc:CVCache.CvAnchorRelations>
+                        <uc:CVCache.CvUiElements>
+                          <scg:List x:TypeArguments="uc:CvElementInfo" Capacity="64">
+                            <uc:CvElementInfo Category="Icon" Region="75, 40, 21, 21" />
+                            <uc:CvElementInfo Category="Icon" Region="1366, 584, 52, 53" />
+                            <uc:CvElementInfo Category="Button" Region="9, 0, 240, 34" />
+                            <uc:CvElementInfo Category="Icon" Region="2493, 38, 25, 24" />
+                            <uc:CvElementInfo Category="Icon" Region="1253, 584, 53, 53" />
+                            <uc:CvElementInfo Category="Icon" Region="1141, 472, 53, 53" />
+                            <uc:CvElementInfo Category="Icon" Region="1365, 472, 54, 53" />
+                            <uc:CvElementInfo Category="Icon" Region="1141, 584, 53, 53" />
+                            <uc:CvElementInfo Category="Icon" Region="1476, 472, 54, 53" />
+                            <uc:CvElementInfo Category="Icon" Region="1253, 472, 53, 52" />
+                            <uc:CvElementInfo Category="Icon" Region="2430, 40, 23, 22" />
+                            <uc:CvElementInfo Category="Icon" Region="1029, 584, 53, 52" />
+                            <uc:CvElementInfo Category="Icon" Region="1029, 472, 53, 52" />
+                            <uc:CvElementInfo Category="Icon" Region="2391, 40, 22, 22" />
+                            <uc:CvElementInfo Category="Icon" Region="115, 41, 21, 22" />
+                            <uc:CvElementInfo Category="Icon" Region="17, 6, 20, 21" />
+                            <uc:CvElementInfo Category="Icon" Region="10, 40, 23, 22" />
+                            <uc:CvElementInfo Category="Icon" Region="2393, 1369, 18, 17" />
+                            <uc:CvElementInfo Category="Icon" Region="2513, 121, 26, 26" />
+                            <uc:CvElementInfo Category="Icon" Region="2359, 41, 22, 21" />
+                            <uc:CvElementInfo Category="Icon" Region="42, 40, 23, 22" />
+                            <uc:CvElementInfo Category="Icon" Region="1477, 584, 53, 53" />
+                            <uc:CvElementInfo Category="CloseButton" Region="2527, 5, 19, 18" />
+                            <uc:CvElementInfo Category="Icon" Region="258, 7, 21, 21" />
+                            <uc:CvElementInfo Category="Icon" Region="1016, 408, 22, 23" />
+                            <uc:CvElementInfo Category="MaximizeButton" Region="2481, 4, 19, 19" />
+                            <uc:CvElementInfo Category="CloseButton" Region="223, 7, 18, 18" />
+                            <uc:CvElementInfo Category="MinimizeButton" Region="2435, 5, 21, 17" />
+                            <uc:CvElementInfo Category="Icon" Region="2531, 40, 16, 23" />
+                            <uc:CvElementInfo Category="Icon" Region="2463, 41, 20, 20" />
+                            <uc:CvElementInfo Category="Button" Region="2376, 1359, 170, 38" />
+                            <uc:CvElementInfo Category="ArrowButton" Region="2389, 5, 21, 18" />
+                            <uc:CvElementInfo Category="InputBox" Region="104, 38, 2308, 27" />
+                            <uc:CvElementInfo Category="Icon" Region="1521, 407, 21, 25" />
+                            <uc:CvElementInfo Category="MaximizeButton" Confidence="Runtime" Region="2463, 41, 21, 21" />
+                            <uc:CvElementInfo Category="InputBox" Confidence="Runtime" Region="9, 1, 240, 31" />
+                            <uc:CvElementInfo Category="InputBox" Confidence="Runtime" Region="2377, 1359, 168, 37" />
+                            <uc:CvElementInfo Category="Button" Confidence="Runtime" Region="2494, 39, 25, 24" />
+                            <uc:CvElementInfo Category="Button" Confidence="Runtime" Region="1477, 585, 53, 53" />
+                            <uc:CvElementInfo Category="Icon" Confidence="Runtime" Region="2390, 5, 19, 16" />
+                            <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="1099, 33, 1301, 31" />
+                            <uc:CvElementInfo Category="InputBox" Region="1000, 394, 561, 49" />
+                            <uc:CvElementInfo Category="ArrowButton" Confidence="Runtime" Region="1521, 407, 20, 25" />
+                          </scg:List>
+                        </uc:CVCache.CvUiElements>
+                        <uc:CVCache.OcrTexts>
+                          <scg:List x:TypeArguments="uc:OcrTextInfo" Capacity="64">
+                            <uc:OcrTextInfo Region="43, 10, 26, 12" Text="New" />
+                            <uc:OcrTextInfo Region="69, 10, 21, 12" Text="Tab" />
+                            <uc:OcrTextInfo Region="226, 11, 11, 11" Text="X" />
+                            <uc:OcrTextInfo Region="262, 9, 14, 15" Text="+" />
+                            <uc:OcrTextInfo Region="2391, 8, 15, 11" Text="v" />
+                            <uc:OcrTextInfo Region="2438, 4, 13, 12" Text="_" />
+                            <uc:OcrTextInfo Region="2530, 7, 13, 13" Text="X" />
+                            <uc:OcrTextInfo Region="119, 46, 12, 12" Text="G" />
+                            <uc:OcrTextInfo Region="141, 45, 42, 13" Text="Search" />
+                            <uc:OcrTextInfo Region="186, 45, 46, 15" Text="Google" />
+                            <uc:OcrTextInfo Region="235, 48, 15, 10" Text="or" />
+                            <uc:OcrTextInfo Region="251, 46, 29, 15" Text="type" />
+                            <uc:OcrTextInfo Region="282, 48, 9, 10" Text="a" />
+                            <uc:OcrTextInfo Region="293, 45, 27, 13" Text="URL" />
+                            <uc:OcrTextInfo Region="2398, 127, 36, 13" Text="Gmail" />
+                            <uc:OcrTextInfo Region="2447, 127, 45, 16" Text="Images" />
+                            <uc:OcrTextInfo Region="1138, 262, 280, 98" Text="Google" />
+                            <uc:OcrTextInfo Region="1050, 411, 51, 15" Text="Search" />
+                            <uc:OcrTextInfo Region="1104, 411, 51, 18" Text="Google" />
+                            <uc:OcrTextInfo Region="1158, 414, 17, 12" Text="or" />
+                            <uc:OcrTextInfo Region="1175, 412, 33, 17" Text="type" />
+                            <uc:OcrTextInfo Region="1211, 414, 10, 12" Text="a" />
+                            <uc:OcrTextInfo Region="1223, 411, 31, 15" Text="URL" />
+                            <uc:OcrTextInfo Region="1045, 489, 20, 18" Text="Ui" />
+                            <uc:OcrTextInfo Region="1157, 489, 20, 18" Text="Ui" />
+                            <uc:OcrTextInfo Region="1269, 489, 20, 18" Text="Ui" />
+                            <uc:OcrTextInfo Region="1381, 489, 20, 18" Text="Ui" />
+                            <uc:OcrTextInfo Region="1490, 485, 27, 26" Text="©" />
+                            <uc:OcrTextInfo Region="1037, 540, 23, 15" Text="Log" />
+                            <uc:OcrTextInfo Region="1062, 540, 12, 12" Text="In" />
+                            <uc:OcrTextInfo Region="1133, 539, 33, 13" Text="Work" />
+                            <uc:OcrTextInfo Region="1167, 540, 34, 12" Text="Items" />
+                            <uc:OcrTextInfo Region="1234, 539, 43, 16" Text="Upload" />
+                            <uc:OcrTextInfo Region="1277, 539, 47, 16" Text="Yearly..." />
+                            <uc:OcrTextInfo Region="1357, 539, 33, 13" Text="Work" />
+                            <uc:OcrTextInfo Region="1391, 540, 35, 12" Text="Items" />
+                            <uc:OcrTextInfo Region="1486, 539, 35, 13" Text="Gmail" />
+                            <uc:OcrTextInfo Region="1045, 601, 20, 18" Text="Ui" />
+                            <uc:OcrTextInfo Region="1154, 597, 26, 25" Text="©" />
+                            <uc:OcrTextInfo Region="1266, 597, 26, 26" Text="©" />
+                            <uc:OcrTextInfo Region="1495, 601, 17, 18" Text="+" />
+                            <uc:OcrTextInfo Region="1011, 651, 59, 13" Text="Download" />
+                            <uc:OcrTextInfo Region="1071, 652, 22, 12" Text="M..." />
+                            <uc:OcrTextInfo Region="1122, 651, 38, 16" Text="Ayuda" />
+                            <uc:OcrTextInfo Region="1161, 651, 17, 13" Text="de" />
+                            <uc:OcrTextInfo Region="1179, 652, 27, 12" Text="Go..." />
+                            <uc:OcrTextInfo Region="1243, 651, 32, 13" Text="Inicia" />
+                            <uc:OcrTextInfo Region="1276, 651, 41, 13" Text="sesion" />
+                            <uc:OcrTextInfo Region="1361, 651, 27, 13" Text="Web" />
+                            <uc:OcrTextInfo Region="1390, 652, 32, 12" Text="Store" />
+                            <uc:OcrTextInfo Region="1465, 651, 25, 13" Text="Add" />
+                            <uc:OcrTextInfo Region="1491, 651, 52, 13" Text="shortcut" />
+                            <uc:OcrTextInfo Region="2416, 1372, 64, 12" Text="Customize" />
+                            <uc:OcrTextInfo Region="2481, 1371, 47, 13" Text="Chrome" />
+                          </scg:List>
+                        </uc:CVCache.OcrTexts>
+                      </uc:CVCache>
+                    </scg:List>
+                  </uc:CvCacheContainer.Caches>
+                </uc:CvCacheContainer>
+              </p:CVScope.DesignTimeCacheContainer>
+              <p:CVScope.OCREngine>
+                <ActivityFunc x:TypeArguments="sd:Image, scg:IEnumerable(scg:KeyValuePair(sd:Rectangle, x:String))">
+                  <ActivityFunc.Argument>
+                    <DelegateInArgument x:TypeArguments="sd:Image" Name="Image" />
+                  </ActivityFunc.Argument>
+                  <p1:UiPathScreenOCR ApiKey="{x:Null}" Endpoint="{x:Null}" Output="{x:Null}" PredictionId="{x:Null}" Text="{x:Null}" UseLocalServer="{x:Null}" ComputeSkewAngle="False" ExtractWords="True" sap:VirtualizedContainerService.HintSize="200,32" sap2010:WorkflowViewState.IdRef="UiPathScreenOCR_1" Image="[Image]" Language="en" Profile="Screen" Scale="1" Timeout="100000" />
+                </ActivityFunc>
+              </p:CVScope.OCREngine>
+              <p:CVScope.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="a20e5284-f8f3-41bd-b958-8c9547b96418" InformativeScreenshot="452b1313b6f1961badfc9a4a04fe964d" WaitForReady="INTERACTIVE">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                </ui:Target>
+              </p:CVScope.Target>
+              <p:CVScope.UseLocalServer>
+                <InArgument x:TypeArguments="x:Boolean" />
+              </p:CVScope.UseLocalServer>
+            </p:CVScope>
+          </Sequence>
+        </ActivityAction>
+      </ui:OpenApplication.Body>
+    </ui:OpenApplication>
+  </Sequence>
+</Activity>
